@@ -1,0 +1,44 @@
+.homepage-hero-banner {
+  flex-shrink: 0;
+  aspect-ratio: 9 / 7;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: auto 75vw;
+  flex-shrink: 0;
+  position: relative;
+}
+.homepage-hero-banner .container {
+  height: 100%;
+}
+.homepage-hero-banner__content {
+  position: absolute;
+  left: 50%;
+  right: 32px;
+  top: 28%;
+}
+@media (max-width: 425px) {
+  .homepage-hero-banner__content {
+    right: 15px;
+  }
+}
+.homepage-hero-banner__content p {
+  font-family: Tektur;
+  font-weight: 400;
+  font-size: 6vw;
+  line-height: 110%;
+  letter-spacing: -0.3px;
+  color: #fff;
+  margin-bottom: 3%;
+}
+.homepage-hero-banner__content .btn {
+  max-width: 250px;
+}
+@media (min-width: 769px) {
+  .homepage-hero-banner {
+    aspect-ratio: 3 / 2;
+    background-position: bottom center;
+  }
+  .homepage-hero-banner__content {
+    top: 22%;
+  }
+}

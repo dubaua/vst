@@ -1,0 +1,203 @@
+.branded-button {
+  --h: 7px;
+  --v: 6px;
+  --height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 5px 20px;
+  height: var(--height);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color, color 0.3s ease-in;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  background: var(--violet1);
+  color: #fff;
+  clip-path: polygon(
+    var(--h) 0,
+    calc(100% - var(--h)) 0,
+    100% var(--v),
+    calc(100% - var(--h)) 100%,
+    var(--h) 100%,
+    0 calc(100% - var(--v)),
+    var(--h) 0
+  );
+  position: relative;
+}
+
+.branded-button--full-width {
+  display: flex;
+}
+
+.branded-button--big {
+  --h: 9px;
+  --v: 7px;
+  --height: 50px;
+  font-size: 16px;
+  padding: 5px 32px;
+}
+
+.branded-button--small {
+  --h: 6px;
+  --v: 5px;
+  --height: 30px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.branded-button--outlined {
+  background: transparent;
+  color: var(--violet1);
+  z-index: 1;
+}
+.branded-button--outlined::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: var(--violet1);
+}
+
+.branded-button--outlined:not(.branded-button--big):not(.branded-button--small)::after {
+  clip-path: polygon(
+    calc(var(--h) + 2px) 2px,
+    calc(var(--h) - 4px) calc(100% - calc(var(--v) + 0px)),
+    calc(var(--h) + 2px) calc(100% - 2px),
+    calc(100% - calc(var(--h) + 2px)) calc(100% - 2px),
+    calc(100% - calc(var(--h) - 4px)) calc(var(--v) + 1px),
+    calc(100% - calc(var(--h) + 2px)) 2px,
+    calc(var(--h) + 2px) 2px,
+    calc(100% - var(--v)) 0,
+    100% var(--v),
+    calc(100% - var(--v)) 100%,
+    var(--h) 100%,
+    0 calc(100% - var(--v)),
+    var(--h) 0,
+    calc(100% - var(--v)) 0
+  );
+}
+
+.branded-button--outlined.branded-button--big::after {
+  clip-path: polygon(
+    calc(var(--h) + 2px) 2px,
+    calc(var(--h) - 6px) calc(100% - calc(var(--v) + 1px)),
+    calc(var(--h) + 2px) calc(100% - 2px),
+    calc(100% - calc(var(--h) + 2px)) calc(100% - 2px),
+    calc(100% - calc(var(--h) - 6px)) calc(var(--v) + 1px),
+    calc(100% - calc(var(--h) + 2px)) 2px,
+    calc(var(--h) + 2px) 2px,
+    calc(100% - var(--v)) 0,
+    100% var(--v),
+    calc(100% - var(--v)) 100%,
+    var(--h) 100%,
+    0 calc(100% - var(--v)),
+    var(--h) 0,
+    calc(100% - var(--v)) 0
+  );
+}
+
+.branded-button--outlined.branded-button--small::after {
+  clip-path: polygon(
+    calc(var(--h) + 2px) 2px,
+    calc(var(--h) - 3px) calc(100% - calc(var(--v) + 1px)),
+    calc(var(--h) + 2px) calc(100% - 2px),
+    calc(100% - calc(var(--h) + 2px)) calc(100% - 2px),
+    calc(100% - calc(var(--h) - 3px)) calc(var(--v) + 0px),
+    calc(100% - calc(var(--h) + 2px)) 2px,
+    calc(var(--h) + 2px) 2px,
+    calc(100% - var(--v)) 0,
+    100% var(--v),
+    calc(100% - var(--v)) 100%,
+    var(--h) 100%,
+    0 calc(100% - var(--v)),
+    var(--h) 0,
+    calc(100% - var(--v)) 0
+  );
+}
+.branded-button--inverted {
+  background: #fff;
+  color: #363636;
+}
+
+.branded-button--outlined.branded-button--inverted {
+  color: #fff;
+  background: none;
+}
+
+.branded-button--outlined.branded-button--inverted::after {
+  background: #fff;
+}
+
+.branded-button--responsive {
+  --h: 6px;
+  --v: 5px;
+  --height: 30px;
+  font-size: 12px;
+  padding: 4px 16px;
+  font-weight: 500;
+}
+
+@media (min-width: 769px) {
+  .branded-button--responsive {
+    --h: 7px;
+    --v: 6px;
+    --height: 40px;
+    font-size: 16px;
+    padding: 5px 20px;
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 1025px) {
+  .branded-button--responsive {
+    --h: 9px;
+    --v: 7px;
+    --height: 50px;
+    font-size: 18px;
+    padding: 6px 28px;
+  }
+  .branded-button--responsive.branded-button--outlined:not(.branded-button--big):not(.branded-button--small)::after {
+    clip-path: polygon(
+      calc(var(--h) + 2px) 2px,
+      calc(var(--h) - 6px) calc(100% - calc(var(--v) + 1px)),
+      calc(var(--h) + 2px) calc(100% - 2px),
+      calc(100% - calc(var(--h) + 2px)) calc(100% - 2px),
+      calc(100% - calc(var(--h) - 6px)) calc(var(--v) + 1px),
+      calc(100% - calc(var(--h) + 2px)) 2px,
+      calc(var(--h) + 2px) 2px,
+      calc(100% - var(--v)) 0,
+      100% var(--v),
+      calc(100% - var(--v)) 100%,
+      var(--h) 100%,
+      0 calc(100% - var(--v)),
+      var(--h) 0,
+      calc(100% - var(--v)) 0
+    );
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-slider__item-left .branded-button {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 425px) {
+  .prd-card__tag .branded-button {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .catalog__item-btn .branded-button {
+    max-width: none;
+    width: auto;
+  }
+}

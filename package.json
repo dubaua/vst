@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "parcel": "^2.15.4"
+  },
+  "scripts": {
+    "dev": "parcel index.html --open"
+  },
+  "devDependencies": {
+    "@parcel/packager-raw-url": "^2.15.4",
+    "@parcel/transformer-jsonld": "^2.15.4"
+  }
+}
